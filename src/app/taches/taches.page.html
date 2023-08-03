@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Mes Taches</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="light">
+  <ion-datetime datetime="datetime"></ion-datetime>
+  <ion-modal [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime id="datetime"></ion-datetime>
+    </ng-template>
+  </ion-modal>
+  <ion-list [inset]="true">
+    <app-item-tache *ngFor="let tache of taches" [tacheItem]="tache"></app-item-tache>
+  </ion-list>
+
+
+  <ion-button color="tertiary">Ajoutez Nouvelles Taches </ion-button>
+  <ion-item>
+    <ion-label>Followers</ion-label>
+    <ion-badge color="primary">22k</ion-badge>
+  </ion-item>
+  
+</ion-content>

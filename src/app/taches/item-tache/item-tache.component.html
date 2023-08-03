@@ -1,0 +1,18 @@
+<ion-item [routerLink]="['./',tacheItem?.id]">
+  <ion-avatar slot="start">
+    <ion-img [src]="tacheItem?.image"></ion-img>
+  </ion-avatar>
+  <ion-label>
+    {{ tacheItem?.titre }}
+  </ion-label>
+</ion-item>
+<ion-row>
+  <ion-col>
+
+      <ion-select label="Check" placeholder="choisir tu fait ou pas">
+        <ion-select-option value="C'est fait">C'est fait</ion-select-option>
+        <ion-select-option value="C'est pas fait">C'est pas fait</ion-select-option>
+      </ion-select>
+
+  </ion-col>
+</ion-row>

@@ -1,0 +1,78 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/taches"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ loadedTache?.titre }}</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onDeleteTache()">
+        <ion-icon name="trash" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="light">
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-no-padding">
+        <ion-img [src]="loadedTache?.image"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-text color="primary">
+          <h1 class="ion-text-left">{{ loadedTache?.titre }}</h1>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col >
+          <ion-list [inset]="true">
+
+            <ion-item *ngFor="let list of loadedTache?.lieux">
+              {{ list }}
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          
+          <p class="ion-text-left" >Prioty: {{ loadedTache?.prioty }}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+      <ion-col>
+        <p class="ion-text-left" >Description: {{ loadedTache?.description }}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p class="ion-text-left" >Date d'expiration :{{ loadedTache?.expiration}}</p>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
